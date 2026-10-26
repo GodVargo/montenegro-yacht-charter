@@ -3,85 +3,449 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>BOKA PRIVÉ | VIP Чартер яхт в Черногории</title>
+  <title>KOTOR MARINE | VIP Yacht Charter & Boat Rental Montenegro</title>
+  <meta name="description" content="Exclusive yacht charter and private boat rental in Kotor, Tivat Porto Montenegro, and Budva. Bareboat rentals without license & skippered luxury yachts.">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BoatTrip",
+    "name": "KOTOR MARINE VIP Yacht Charter",
+    "description": "Bespoke private yacht and boat charter across Kotor Bay, Porto Montenegro, and Blue Cave.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "KOTOR MARINE",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kotor",
+        "addressCountry": "ME"
+      },
+      "priceRange": "€350 - €4500"
+    }
+  }
+  </script>
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #060B11; color: #FFFFFF; overflow-x: hidden; line-height: 1.5; }
-    
-    /* HEADER: Compact, perfectly centered, 1 line */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :root {
+      --bg-dark: #04080F;
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent-azure: #00E5FF;
+      --accent-gold: #D4AF37;
+      --text-main: #FFFFFF;
+      --text-muted: rgba(255, 255, 255, 0.65);
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* ─── HEADER ─── */
     .header {
-      position: fixed; top: 0; left: 0; width: 100%; height: 56px; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between; padding: 0 16px;
-      background: rgba(6, 11, 17, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 56px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      background: rgba(4, 8, 15, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
-    .brand { display: flex; align-items: center; gap: 8px; text-decoration: none; }
-    .brand-dot { width: 7px; height: 7px; border-radius: 50%; background: #00E5FF; box-shadow: 0 0 10px #00E5FF; }
-    .brand-title { font-size: 1.05rem; font-weight: 800; letter-spacing: 0.12em; color: #FFFFFF; white-space: nowrap; }
-    .lang-toggle { display: flex; background: rgba(255, 255, 255, 0.08); border-radius: 18px; padding: 2px; }
-    .lang-btn { border: none; background: transparent; color: rgba(255, 255, 255, 0.6); font-size: 0.72rem; font-weight: 700; padding: 4px 10px; border-radius: 14px; cursor: pointer; }
-    .lang-btn.active { background: #00E5FF; color: #060B11; }
 
-    /* HERO: 100% visible cinematic dark luxury with real yacht photography */
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .brand-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-azure);
+      box-shadow: 0 0 10px var(--accent-azure);
+    }
+
+    .brand-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #FFFFFF;
+      white-space: nowrap;
+    }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 2px;
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn.active {
+      background: var(--accent-azure);
+      color: #04080F;
+    }
+
+    /* ─── HERO ─── */
     .hero {
-      position: relative; min-height: 92vh; display: flex; flex-direction: column; justify-content: flex-end;
-      padding: 80px 20px 40px;
-      background: linear-gradient(180deg, rgba(6,11,17,0.2) 0%, rgba(6,11,17,0.7) 50%, #060B11 100%),
-                  url('https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=1400&q=85') center 30% / cover no-repeat;
+      position: relative;
+      min-height: 94vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 80px 20px 48px;
+      background: 
+        linear-gradient(180deg, rgba(4,8,15,0.2) 0%, rgba(4,8,15,0.7) 60%, var(--bg-dark) 100%),
+        url('https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=1400&q=85') center 25% / cover no-repeat;
     }
+
     .hero-badge {
-      display: inline-flex; align-items: center; gap: 6px; background: rgba(0, 229, 255, 0.12);
-      border: 1px solid rgba(0, 229, 255, 0.35); padding: 5px 12px; border-radius: 20px;
-      font-size: 0.72rem; font-weight: 700; color: #00E5FF; margin-bottom: 14px; width: fit-content;
-    }
-    .hero-title { font-size: 2.1rem; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 12px; }
-    .hero-title span { color: #00E5FF; }
-    .hero-desc { font-size: 0.95rem; color: rgba(255, 255, 255, 0.8); line-height: 1.5; margin-bottom: 22px; max-width: 480px; }
-    
-    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
-    .chip { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.12); padding: 6px 12px; border-radius: 10px; font-size: 0.75rem; font-weight: 500; }
-
-    .btn-main {
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      background: #00E5FF; color: #060B11; font-weight: 800; font-size: 0.95rem;
-      padding: 16px; border-radius: 14px; text-decoration: none; box-shadow: 0 4px 25px rgba(0, 229, 255, 0.35);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0, 229, 255, 0.12);
+      border: 1px solid rgba(0, 229, 255, 0.35);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--accent-azure);
+      margin-bottom: 14px;
+      width: fit-content;
     }
 
-    /* FLEET */
-    .section { padding: 40px 20px 90px; }
-    .sec-title { font-size: 1.5rem; font-weight: 800; margin-bottom: 6px; }
-    .sec-subtitle { font-size: 0.85rem; color: rgba(255, 255, 255, 0.5); margin-bottom: 24px; }
-    .cards { display: flex; flex-direction: column; gap: 20px; }
-    .card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; overflow: hidden; }
-    .card-img-wrap { position: relative; width: 100%; height: 210px; }
-    .card-img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .card-badge { position: absolute; top: 12px; left: 12px; background: rgba(6, 11, 17, 0.8); border: 1px solid rgba(0, 229, 255, 0.4); color: #00E5FF; padding: 4px 10px; border-radius: 16px; font-size: 0.68rem; font-weight: 700; }
-    .card-body { padding: 18px; }
-    .card-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
-    .card-name { font-size: 1.2rem; font-weight: 700; }
-    .card-price { font-size: 1.15rem; font-weight: 800; color: #00E5FF; }
-    .card-specs { font-size: 0.78rem; color: rgba(255, 255, 255, 0.6); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
-    .card-btn { display: flex; align-items: center; justify-content: center; padding: 12px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px; color: #FFF; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+    .hero-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
 
-    /* STICKY BOTTOM BAR */
+    .hero-title span {
+      background: linear-gradient(90deg, #00E5FF 0%, #70A6FF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 22px;
+      max-width: 480px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .chip {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 6px 12px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--accent-azure);
+      color: #04080F;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 16px;
+      border-radius: 14px;
+      text-decoration: none;
+      box-shadow: 0 4px 25px rgba(0, 229, 255, 0.35);
+      transition: transform 0.2s ease;
+    }
+
+    /* ─── SECTION COMMON ─── */
+    .section {
+      padding: 40px 20px 20px;
+    }
+
+    .sec-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-azure);
+      margin-bottom: 6px;
+    }
+
+    .sec-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+
+    .sec-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    /* ─── FLEET CARDS (ZEELANDER BEHANCE STYLE) ─── */
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    .card-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 220px;
+    }
+
+    .card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(4, 8, 15, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(0, 229, 255, 0.4);
+      color: var(--accent-azure);
+      padding: 4px 10px;
+      border-radius: 16px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+
+    .card-name {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .card-price {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--accent-azure);
+    }
+
+    .card-price span {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
+    .card-specs {
+      display: flex;
+      gap: 12px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .card-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 13px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    /* ─── ROUTES SECTION ─── */
+    .routes-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .route-card {
+      position: relative;
+      height: 140px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--card-border);
+    }
+
+    .route-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .route-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(4,8,15,0.1) 0%, rgba(4,8,15,0.85) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 16px;
+    }
+
+    .route-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin-bottom: 2px;
+    }
+
+    .route-desc {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* ─── LEGAL FAQ ACCORDION ─── */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .faq-item {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .faq-q {
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #FFFFFF;
+    }
+
+    .faq-a {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ─── FIXED BOTTOM BAR ─── */
     .bottom-bar {
-      position: fixed; bottom: 0; left: 0; width: 100%; height: 60px;
-      background: rgba(6, 11, 17, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      border-top: 1px solid rgba(255, 255, 255, 0.08); display: flex; align-items: center; padding: 0 16px; gap: 10px; z-index: 100;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background: rgba(4, 8, 15, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      gap: 10px;
+      z-index: 100;
     }
-    .b-btn { flex: 1; height: 42px; border-radius: 12px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 0.85rem; font-weight: 700; color: #FFF; }
+
+    .b-btn {
+      flex: 1;
+      height: 42px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
     .b-wa { background: #25D366; }
     .b-tg { background: #229ED9; }
+
+    .spacer { height: 70px; }
   </style>
 </head>
 <body>
+
+  <!-- HEADER -->
   <header class="header">
     <a href="#" class="brand">
       <div class="brand-dot"></div>
-      <span class="brand-title">BOKA PRIVÉ</span>
+      <span class="brand-title">KOTOR MARINE</span>
     </a>
     <div class="lang-toggle">
       <button class="lang-btn" onclick="setLang('en')">EN</button>
@@ -89,72 +453,138 @@
     </div>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-badge">КОТОР • ТИВАТ • ПОРТО МОНТЕНЕГРО</div>
     <h1 class="hero-title">Премиальный чартер яхт в <span>Черногории</span></h1>
-    <p class="hero-desc">Индивидуальные морские прогулки по Боко-Которской бухте и Голубой пещере. Катера с капитаном и самостоятельное управление без прав.</p>
+    <p class="hero-desc">
+      Индивидуальные морские экспедиции по Боко-Которской бухте и Голубой пещере. Аренда катеров без лицензии и VIP-яхты со шкипером.
+    </p>
+
     <div class="chips">
       <span class="chip">✓ Топливо включено</span>
       <span class="chip">✓ Без скрытых доплат</span>
       <span class="chip">✓ Русскоязычный консьерж</span>
     </div>
-    <a href="https://wa.me/38269000000?text=Здравствуйте!" class="btn-main">Забронировать в WhatsApp</a>
+
+    <a href="https://wa.me/38269000000?text=Здравствуйте!%20Хочу%20забронировать%20катер%20в%20Которе" class="hero-cta-btn">
+      Забронировать в WhatsApp
+    </a>
   </section>
 
-  <section class="section">
-    <h2 class="sec-title">Флот в наличии</h2>
-    <p class="sec-subtitle">Катера и яхты в маринах Котора и Порто Монтенегро</p>
+  <!-- FLEET -->
+  <section class="section" id="fleet">
+    <div class="sec-tag">Эксклюзивный флот</div>
+    <h2 class="sec-title">Катера и яхты в наличии</h2>
+    <p class="sec-subtitle">Подача в марины Котора, Тивата и Порто Монтенегро за 60 минут</p>
+
     <div class="cards">
+      <!-- 1. Bareboat -->
       <div class="card">
         <div class="card-img-wrap">
-          <img class="card-img" src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=800&q=80" alt="Ranieri 19">
+          <img class="card-img" src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=800&q=80" alt="Ranieri 19 Open speedboat rental Kotor">
           <div class="card-badge">БЕЗ ПРАВ И ОПЫТА</div>
         </div>
         <div class="card-body">
           <div class="card-header">
             <div class="card-name">Ranieri 19 Open</div>
-            <div class="card-price">€350 <span style="font-size:0.75rem; color:#888;">/ день</span></div>
+            <div class="card-price">€350 <span>/ день</span></div>
           </div>
-          <div class="card-specs">5.5м • до 5 гостей • Yamaha 15 л.с. • Котор</div>
-          <a href="https://wa.me/38269000000?text=Бронь%20Ranieri%2019" class="card-btn">Выбрать судно</a>
+          <div class="card-specs">5.5м • до 5 гостей • Yamaha 15 л.с. • Марина Котор</div>
+          <a href="https://wa.me/38269000000?text=Интересует%20катер%20Ranieri%2019%20без%20прав" class="card-btn">Выбрать судно</a>
         </div>
       </div>
 
+      <!-- 2. Sport Cruiser -->
       <div class="card">
         <div class="card-img-wrap">
-          <img class="card-img" src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=800&q=80" alt="Axopar 28">
-          <div class="card-badge">С КАПИТАНОМ</div>
+          <img class="card-img" src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=800&q=80" alt="Axopar 28 T-Top charter Tivat">
+          <div class="card-badge">СО ШКИПЕРОМ</div>
         </div>
         <div class="card-body">
           <div class="card-header">
             <div class="card-name">Axopar 28 T-Top</div>
-            <div class="card-price">€650 <span style="font-size:0.75rem; color:#888;">/ день</span></div>
+            <div class="card-price">€650 <span>/ день</span></div>
           </div>
-          <div class="card-specs">9.2м • до 8 гостей • 300 л.с. • Тиват</div>
-          <a href="https://wa.me/38269000000?text=Бронь%20Axopar%2028" class="card-btn">Выбрать судно</a>
+          <div class="card-specs">9.2м • до 8 гостей • 300 л.с. Mercury • Тиват</div>
+          <a href="https://wa.me/38269000000?text=Интересует%20катер%20Axopar%2028%20со%20шкипером" class="card-btn">Выбрать судно</a>
         </div>
       </div>
 
+      <!-- 3. Luxury Yacht -->
       <div class="card">
         <div class="card-img-wrap">
-          <img class="card-img" src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=800&q=80" alt="Princess 62">
-          <div class="card-badge">VIP ЯХТА</div>
+          <img class="card-img" src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=800&q=80" alt="Princess 62 Fly luxury yacht charter Montenegro">
+          <div class="card-badge">VIP СУПЕРЯХТА</div>
         </div>
         <div class="card-body">
           <div class="card-header">
             <div class="card-name">Princess 62 Fly</div>
-            <div class="card-price">€3,800 <span style="font-size:0.75rem; color:#888;">/ день</span></div>
+            <div class="card-price">€3,800 <span>/ день</span></div>
           </div>
-          <div class="card-specs">19м • до 12 гостей • Экипаж • Porto Montenegro</div>
-          <a href="https://wa.me/38269000000?text=Бронь%20Princess%2062" class="card-btn">Выбрать судно</a>
+          <div class="card-specs">19м • до 12 гостей • Экипаж 2 чел • Porto Montenegro</div>
+          <a href="https://wa.me/38269000000?text=Интересует%20VIP%20яхта%20Princess%2062" class="card-btn">Выбрать судно</a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- POPULAR ROUTES -->
+  <section class="section" id="routes">
+    <div class="sec-tag">Маршруты</div>
+    <h2 class="sec-title">Знаковые локации</h2>
+    <p class="sec-subtitle">Индивидуальные сценарии с высадкой на уединенных пляжах</p>
+
+    <div class="routes-grid">
+      <div class="route-card">
+        <img class="route-img" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Голубая пещера">
+        <div class="route-overlay">
+          <div class="route-title">Голубая пещера & Остров Мамула</div>
+          <div class="route-desc">Купание в ультрамариновой воде и исторический форт • 4-6 часов</div>
+        </div>
+      </div>
+      <div class="route-card">
+        <img class="route-img" src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80" alt="Пераст и остров Богородицы">
+        <div class="route-overlay">
+          <div class="route-title">Остров Богородицы & Пераст</div>
+          <div class="route-desc">Панорама древнего Которского залива и рестораны свежих устриц • 3-4 часа</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEGAL & FAQ -->
+  <section class="section" id="faq">
+    <div class="sec-tag">Гарантии и правила</div>
+    <h2 class="sec-title">Частые вопросы</h2>
+    <p class="sec-subtitle">Все о правах, безопасности и бронировании</p>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Правда ли можно арендовать лодку без прав?</div>
+        <div class="faq-a">Да. Маломерные суда с двигателем до 15 л.с. в Черногории разрешено водить самостоятельно в пределах Которского залива. Перед выходом капитан проводит 15-минутный подробный инструктаж по навигации и безопасности.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Что входит в стоимость аренды?</div>
+        <div class="faq-a">Полный бак топлива, страховка пассажиров, швартовка в домашней марине, спасательные жилеты и аудиосистема с Bluetooth. Никаких скрытых сборов при возврате.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Как забронировать судно на нужную дату?</div>
+        <div class="faq-a">Напишите консьержу в WhatsApp или Telegram с указанием даты и количества гостей. Мы фиксируем бронь без предоплаты за 24 часа до выхода.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="spacer"></div>
+
+  <!-- FIXED BOTTOM BAR -->
   <div class="bottom-bar">
-    <a href="https://wa.me/38269000000?text=Здравствуйте!" class="b-btn b-wa">WhatsApp</a>
-    <a href="https://t.me/vidja_charter" class="b-btn b-tg">Telegram</a>
+    <a href="https://wa.me/38269000000?text=Здравствуйте!%20Хочу%20уточнить%20наличие%20катера%20в%20Черногории" class="b-btn b-wa">
+      WhatsApp
+    </a>
+    <a href="https://t.me/vidja_charter" class="b-btn b-tg">
+      Telegram
+    </a>
   </div>
 
   <script>
@@ -162,13 +592,13 @@
       document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
       event.target.classList.add('active');
       if (lang === 'en') {
-        document.querySelector('.hero-title').innerHTML = 'Luxury Yacht Charter in <span>Montenegro</span>';
-        document.querySelector('.hero-desc').innerText = 'Private boat tours across Boka Bay and Blue Cave. Bareboat rentals and skippered luxury charters.';
-        document.querySelector('.btn-main').innerText = 'Book via WhatsApp';
+        document.querySelector('.hero-title').innerHTML = 'Bespoke Yacht & Boat Charter in <span>Montenegro</span>';
+        document.querySelector('.hero-desc').innerText = 'Private marine expeditions across Boka Bay and Blue Cave. Bareboat rentals without license & skippered luxury yachts.';
+        document.querySelector('.hero-cta-btn').innerText = 'Book via WhatsApp';
       } else {
         document.querySelector('.hero-title').innerHTML = 'Премиальный чартер яхт в <span>Черногории</span>';
-        document.querySelector('.hero-desc').innerText = 'Индивидуальные морские прогулки по Боко-Которской бухте и Голубой пещере. Катера с капитаном и самостоятельное управление без прав.';
-        document.querySelector('.btn-main').innerText = 'Забронировать в WhatsApp';
+        document.querySelector('.hero-desc').innerText = 'Индивидуальные морские экспедиции по Боко-Которской бухте и Голубой пещере. Аренда катеров без лицензии и VIP-яхты со шкипером.';
+        document.querySelector('.hero-cta-btn').innerText = 'Забронировать в WhatsApp';
       }
     }
   </script>
