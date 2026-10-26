@@ -126,14 +126,14 @@
     /* ─── HERO ─── */
     .hero {
       position: relative;
-      min-height: 94vh;
+      min-height: 96vh;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 80px 20px 48px;
+      padding: 85px 20px 60px;
       background: 
-        linear-gradient(180deg, rgba(4,8,15,0.2) 0%, rgba(4,8,15,0.7) 60%, var(--bg-dark) 100%),
-        url('https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=1400&q=85') center 25% / cover no-repeat;
+        linear-gradient(180deg, rgba(4,8,15,0.75) 0%, rgba(4,8,15,0.45) 40%, rgba(4,8,15,0.85) 75%, var(--bg-dark) 100%),
+        url('https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=1400&q=85') center 20% / cover no-repeat;
     }
 
     .hero-badge {
@@ -152,7 +152,7 @@
       width: fit-content;
     }
 
-    .hero-title {
+    .hero-title { text-shadow: 0 2px 16px rgba(0,0,0,0.8);
       font-size: 2.2rem;
       font-weight: 800;
       line-height: 1.15;
@@ -467,8 +467,8 @@
       <span class="chip">✓ Русскоязычный консьерж</span>
     </div>
 
-    <a href="https://wa.me/38269000000?text=Здравствуйте!%20Хочу%20забронировать%20катер%20в%20Которе" class="hero-cta-btn">
-      Забронировать в WhatsApp
+    <a href="#fleet" class="hero-cta-btn">
+      Смотреть флот в наличии ↓
     </a>
   </section>
 
@@ -594,11 +594,11 @@
       if (lang === 'en') {
         document.querySelector('.hero-title').innerHTML = 'Bespoke Yacht & Boat Charter in <span>Montenegro</span>';
         document.querySelector('.hero-desc').innerText = 'Private marine expeditions across Boka Bay and Blue Cave. Bareboat rentals without license & skippered luxury yachts.';
-        document.querySelector('.hero-cta-btn').innerText = 'Book via WhatsApp';
+        document.querySelector('.hero-cta-btn').innerText = 'Explore Available Fleet ↓';
       } else {
         document.querySelector('.hero-title').innerHTML = 'Премиальный чартер яхт в <span>Черногории</span>';
         document.querySelector('.hero-desc').innerText = 'Индивидуальные морские экспедиции по Боко-Которской бухте и Голубой пещере. Аренда катеров без лицензии и VIP-яхты со шкипером.';
-        document.querySelector('.hero-cta-btn').innerText = 'Забронировать в WhatsApp';
+        document.querySelector('.hero-cta-btn').innerText = 'Смотреть флот в наличии ↓';
       }
     }
   </script>
